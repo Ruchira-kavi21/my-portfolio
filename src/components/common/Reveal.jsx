@@ -3,9 +3,9 @@ import { motion, useReducedMotion } from "framer-motion";
 
 function Reveal({
   children,
-  delay = 0,
+  delay = 0.5,
   duration = 0.7,
-  y = 35,
+  y = 50git ,
   className = "",
 }) {
   const shouldReduceMotion = useReducedMotion();
