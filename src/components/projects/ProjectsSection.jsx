@@ -3,6 +3,7 @@ import { useRef, useState } from "react";
 
 import {
   ArrowLeft,
+  ArrowUp,
   ArrowRight,
   ArrowUpRight,
   BrainCircuit,
@@ -322,150 +323,150 @@ function ProjectCard({ project }) {
 // ==========================================
 
 function ProjectsSection() {
-  const sliderRef = useRef(null);
+    const sliderRef = useRef(null);
 
-  const [activeFilter, setActiveFilter] = useState("All");
+    const [activeFilter, setActiveFilter] = useState("All");
 
-  const filteredProjects =
-    activeFilter === "All"
-      ? projects
-      : projects.filter(
-          (project) => project.category === activeFilter
-        );
+    const filteredProjects =
+        activeFilter === "All"
+        ? projects
+        : projects.filter(
+            (project) => project.category === activeFilter
+            );
 
-  const slide = (direction) => {
-    if (!sliderRef.current) return;
+    const slide = (direction) => {
+        if (!sliderRef.current) return;
 
-    const card = sliderRef.current.querySelector("[data-project-card]");
-    if (!card) return;
+        const card = sliderRef.current.querySelector("[data-project-card]");
+        if (!card) return;
 
-    const cardWidth = card.getBoundingClientRect().width;
-    const gap = 24;
+        const cardWidth = card.getBoundingClientRect().width;
+        const gap = 24;
 
-    sliderRef.current.scrollBy({
-      left: direction * (cardWidth + gap),
-      behavior: "smooth",
-    });
-  };
-
-  const changeFilter = (filter) => {
-    setActiveFilter(filter);
-
-    if (sliderRef.current) {
-      sliderRef.current.scrollTo({
-        left: 0,
+        sliderRef.current.scrollBy({
+        left: direction * (cardWidth + gap),
         behavior: "smooth",
-      });
-    }
-  };
+        });
+    };
 
-  return (
-    <section id="projects" className=" border-y border-white/[0.07] bg-white/1.5 px-5 py-24 sm:px-8 lg:px-12 lg:py-32 ">
-      <div className="mx-auto max-w-7xl">
+    const changeFilter = (filter) => {
+        setActiveFilter(filter);
 
-        {/* Heading */}
-        <SectionLabel>Selected work</SectionLabel>
+        if (sliderRef.current) {
+        sliderRef.current.scrollTo({
+            left: 0,
+            behavior: "smooth",
+        });
+        }
+    };
 
-        <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
-          <div>
-            <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl">
-              Projects &
-              <span className="block text-violet-300">
-                engineering work.
-              </span>
-            </h2>
+    return (
+        <section id="projects" className=" border-y border-white/[0.07] bg-white/1.5 px-5 py-24 sm:px-8 lg:px-12 lg:py-32 ">
+            <div className="mx-auto max-w-7xl">
 
-            <p className="mt-5 max-w-xl text-sm leading-7 text-zinc-400">
-              A collection of my research, software applications,
-              cloud architecture and mobile development work.
-            </p>
-          </div>
+                {/* Heading */}
+                <SectionLabel>Selected work</SectionLabel>
 
-          <span className="font-mono text-xs text-zinc-500">
-            {String(filteredProjects.length).padStart(2, "0")} PROJECTS
-          </span>
-        </div>
+                <div className="mb-10 flex flex-col justify-between gap-5 md:flex-row md:items-end">
+                <div>
+                    <h2 className="text-3xl font-semibold tracking-tight sm:text-5xl">
+                    Projects &
+                    <span className="block text-violet-300">
+                        engineering work.
+                    </span>
+                    </h2>
 
-        {/* Filters */}
-        <div className="mb-9 flex gap-2 overflow-x-auto pb-3">
-          {filters.map((filter) => (
-            <button key={filter} onClick={() => changeFilter(filter)} className={`
-                shrink-0 rounded-lg border px-4 py-2.5 text-xs font-medium transition-colors duration-200
-                ${
-                  activeFilter === filter
-                    ? "border-violet-400/50 bg-violet-500/15 text-violet-200"
-                    : "border-white/10 bg-white/2 text-zinc-400 hover:border-violet-400/30 hover:text-white"
-                }
-              `} >
-              {filter}
-            </button>
-          ))}
-        </div>
+                    <p className="mt-5 max-w-xl text-sm leading-7 text-zinc-400">
+                    A collection of my research, software applications,
+                    cloud architecture and mobile development work.
+                    </p>
+                </div>
 
-        {/* Carousel controls */}
-        <div className="mb-5 flex items-center justify-between">
-          <p className="text-xs text-zinc-500">
-            Scroll or use the arrows to explore
-          </p>
+                <span className="font-mono text-xs text-zinc-500">
+                    {String(filteredProjects.length).padStart(2, "0")} PROJECTS
+                </span>
+                </div>
 
-          <div className="flex gap-3">
-            <button type="button"onClick={() => slide(-1)}aria-label="Previous projects" className="  flex h-11 w-11 items-center justify-center  rounded-xl border border-white/10 bg-white/3 text-zinc-300  transition-colors hover:border-violet-400/40 hover:bg-violet-500/10 hover:text-white ">
-              <ArrowLeft size={19} />
-            </button>
+                {/* Filters */}
+                <div className="mb-9 flex gap-2 overflow-x-auto pb-3">
+                {filters.map((filter) => (
+                    <button key={filter} onClick={() => changeFilter(filter)} className={`
+                        shrink-0 rounded-lg border px-4 py-2.5 text-xs font-medium transition-colors duration-200
+                        ${
+                        activeFilter === filter
+                            ? "border-violet-400/50 bg-violet-500/15 text-violet-200"
+                            : "border-white/10 bg-white/2 text-zinc-400 hover:border-violet-400/30 hover:text-white"
+                        }
+                    `} >
+                    {filter}
+                    </button>
+                ))}
+                </div>
 
-            <button
-              type="button"
-              onClick={() => slide(1)}
-              aria-label="Next projects"
-              className="
-                flex h-11 w-11 items-center justify-center
-                rounded-xl border border-white/10
-                bg-white/3 text-zinc-300
-                transition-colors hover:border-violet-400/40
-                hover:bg-violet-500/10 hover:text-white
-              "
-            >
-              <ArrowRight size={19} />
-            </button>
-          </div>
-        </div>
+                {/* Carousel controls */}
+                <div className="mb-5 flex items-center justify-between">
+                <p className="text-xs text-zinc-500">
+                    Scroll or use the arrows to explore
+                </p>
 
-        {/* Sliding cards */}
-        <div
-          ref={sliderRef}
-          className="
-            flex snap-x snap-mandatory gap-6
-            overflow-x-auto overflow-y-hidden
-            scroll-smooth pb-5
-            scrollbar-thin
-            [scrollbar-color:#49376b_transparent]
-          "
-        >
-          {filteredProjects.map((project) => (
-            <div
-              key={project.id}
-              data-project-card
-              className="shrink-0"
-            >
-              <ProjectCard project={project} />
+                <div className="flex gap-3">
+                    <button type="button"onClick={() => slide(-1)}aria-label="Previous projects" className="  flex h-11 w-11 items-center justify-center  rounded-xl border border-white/10 bg-white/3 text-zinc-300  transition-colors hover:border-violet-400/40 hover:bg-violet-500/10 hover:text-white ">
+                    <ArrowLeft size={19} />
+                    </button>
+
+                    <button
+                    type="button"
+                    onClick={() => slide(1)}
+                    aria-label="Next projects"
+                    className="
+                        flex h-11 w-11 items-center justify-center
+                        rounded-xl border border-white/10
+                        bg-white/3 text-zinc-300
+                        transition-colors hover:border-violet-400/40
+                        hover:bg-violet-500/10 hover:text-white
+                    "
+                    >
+                    <ArrowRight size={19} />
+                    </button>
+                </div>
+                </div>
+
+                {/* Sliding cards */}
+                <div
+                ref={sliderRef}
+                className="
+                    flex snap-x snap-mandatory gap-6
+                    overflow-x-auto overflow-y-hidden
+                    scroll-smooth pb-5
+                    scrollbar-thin
+                    [scrollbar-color:#49376b_transparent]
+                "
+                >
+                {filteredProjects.map((project) => (
+                    <div
+                    key={project.id}
+                    data-project-card
+                    className="shrink-0"
+                    >
+                    <ProjectCard project={project} />
+                    </div>
+                ))}
+                </div>
+
+                {/* Footer note */}
+                <div className="mt-8 flex flex-col justify-between gap-3 border-t border-white/[0.07] pt-6 sm:flex-row sm:items-center">
+                <p className="text-xs text-zinc-500">
+                    Showing {filteredProjects.length} project entries
+                </p>
+
+                <p className="text-xs text-zinc-500">
+                    More project details and demonstrations coming soon.
+                </p>
+                </div>
+
             </div>
-          ))}
-        </div>
-
-        {/* Footer note */}
-        <div className="mt-8 flex flex-col justify-between gap-3 border-t border-white/[0.07] pt-6 sm:flex-row sm:items-center">
-          <p className="text-xs text-zinc-500">
-            Showing {filteredProjects.length} project entries
-          </p>
-
-          <p className="text-xs text-zinc-500">
-            More project details and demonstrations coming soon.
-          </p>
-        </div>
-
-      </div>
-    </section>
-  );
+        </section>
+    );
 }
 
 export default ProjectsSection;
