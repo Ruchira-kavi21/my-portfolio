@@ -193,7 +193,7 @@ function ContactSection() {
           className="absolute bottom-0 right-[5%] h-80 w-80 rounded-full bg-violet-500/10 blur-[120px]"
         />
 
-        <div className="absolute left-1/2 top-1/2 h-px w-[80%] -translate-x-1/2 bg-gradient-to-r from-transparent via-purple-500/20 to-transparent" />
+        <div className="absolute left-1/2 top-1/2 h-px w-[80%] -translate-x-1/2 bg-linear-to-r from-transparent via-purple-500/20 to-transparent" />
       </div>
 
       <div className="relative mx-auto max-w-7xl">
@@ -212,7 +212,7 @@ function ContactSection() {
             className="mt-5 text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl"
           >
             Let's Work{" "}
-            <span className="bg-gradient-to-r from-purple-400 via-violet-300 to-purple-500 bg-clip-text text-transparent">
+            <span className="bg-linear-to-r from-purple-400 via-violet-300 to-purple-500 bg-clip-text text-transparent">
               Together
             </span>
           </motion.h2>
@@ -390,7 +390,7 @@ function ContactSection() {
                       onChange={handleChange}
                       placeholder="Enter your name"
                       required
-                      className="w-full rounded-xl border border-white/10 bg-[#111018]/90 px-4 py-3.5 text-sm text-white outline-none transition-all duration-300 placeholder:text-gray-600 hover:border-white/20 focus:border-purple-500 focus:bg-purple-500/[0.04] focus:shadow-[0_0_20px_rgba(139,92,246,0.12)]"
+                      className="w-full rounded-xl border border-white/10 bg-[#111018]/90 px-4 py-3.5 text-sm text-white outline-none transition-all duration-300 placeholder:text-gray-600 hover:border-white/20 focus:border-purple-500 focus:bg-purple-500/4 focus:shadow-[0_0_20px_rgba(139,92,246,0.12)]"
                     />
                   </motion.div>
 
@@ -410,7 +410,7 @@ function ContactSection() {
                       onChange={handleChange}
                       placeholder="Enter your email"
                       required
-                      className="w-full rounded-xl border border-white/10 bg-[#111018]/90 px-4 py-3.5 text-sm text-white outline-none transition-all duration-300 placeholder:text-gray-600 hover:border-white/20 focus:border-purple-500 focus:bg-purple-500/[0.04] focus:shadow-[0_0_20px_rgba(139,92,246,0.12)]"
+                      className="w-full rounded-xl border border-white/10 bg-[#111018]/90 px-4 py-3.5 text-sm text-white outline-none transition-all duration-300 placeholder:text-gray-600 hover:border-white/20 focus:border-purple-500 focus:bg-purple-500/4 focus:shadow-[0_0_20px_rgba(139,92,246,0.12)]"
                     />
                   </motion.div>
                 </div>
@@ -431,7 +431,7 @@ function ContactSection() {
                     onChange={handleChange}
                     placeholder="What would you like to discuss?"
                     required
-                    className="w-full rounded-xl border border-white/10 bg-[#111018]/90 px-4 py-3.5 text-sm text-white outline-none transition-all duration-300 placeholder:text-gray-600 hover:border-white/20 focus:border-purple-500 focus:bg-purple-500/[0.04] focus:shadow-[0_0_20px_rgba(139,92,246,0.12)]"
+                    className="w-full rounded-xl border border-white/10 bg-[#111018]/90 px-4 py-3.5 text-sm text-white outline-none transition-all duration-300 placeholder:text-gray-600 hover:border-white/20 focus:border-purple-500 focus:bg-purple-500/4 focus:shadow-[0_0_20px_rgba(139,92,246,0.12)]"
                   />
                 </motion.div>
 
@@ -451,7 +451,7 @@ function ContactSection() {
                     placeholder="Write your message here..."
                     rows={5}
                     required
-                    className="w-full resize-none rounded-xl border border-white/10 bg-[#111018]/90 px-4 py-3.5 text-sm text-white outline-none transition-all duration-300 placeholder:text-gray-600 hover:border-white/20 focus:border-purple-500 focus:bg-purple-500/[0.04] focus:shadow-[0_0_20px_rgba(139,92,246,0.12)]"
+                    className="w-full resize-none rounded-xl border border-white/10 bg-[#111018]/90 px-4 py-3.5 text-sm text-white outline-none transition-all duration-300 placeholder:text-gray-600 hover:border-white/20 focus:border-purple-500 focus:bg-purple-500/4 focus:shadow-[0_0_20px_rgba(139,92,246,0.12)]"
                   />
                 </motion.div>
 
@@ -469,7 +469,7 @@ function ContactSection() {
                     whileTap={
                       shouldReduceMotion ? {} : { scale: 0.98 }
                     }
-                    className="group flex w-full items-center justify-center gap-3 rounded-xl bg-gradient-to-r from-purple-600 to-violet-600 px-6 py-4 text-sm font-semibold text-white transition-all duration-300 hover:from-purple-500 hover:to-violet-500"
+                    className="group flex w-full items-center justify-center gap-3 rounded-xl bg-linear-to-r from-purple-600 to-violet-600 px-6 py-4 text-sm font-semibold text-white transition-all duration-300 hover:from-purple-500 hover:to-violet-500"
                   >
                     Send Message
 
