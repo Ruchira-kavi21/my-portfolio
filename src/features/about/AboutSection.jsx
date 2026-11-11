@@ -1,6 +1,7 @@
 
 import { Code2, Lightbulb, Target } from "lucide-react";
 import SectionLabel from "../../components/common/SectionLabel";
+import { motion } from "framer-motion";
 
 const highlights = [
   {
@@ -27,7 +28,7 @@ function AboutSection() {
   return (
     <section
       id="about"
-      className="border-y border-white/[0.07] bg-white/[0.015] px-5 py-24 sm:px-8 lg:px-12 lg:py-32"
+      className="border-y border-white/[0.07] bg-white/1.5 px-5 py-24 sm:px-8 lg:px-12 lg:py-32"
     >
       <div className="mx-auto max-w-7xl">
         <SectionLabel>About me</SectionLabel>
@@ -63,10 +64,19 @@ function AboutSection() {
 
           <div className="grid gap-4">
             {highlights.map(({ icon: Icon, title, description }) => (
-              <div
+              <motion.div
                 key={title}
-                className="group rounded-2xl border border-white/[0.08] bg-[#101018] p-6 transition hover:border-violet-400/30 hover:bg-violet-500/[0.04]"
-              >
+                initial={{ opacity: 0, x: 35 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                    duration: 0.6,
+                    delay: 0.15,
+                    ease: "easeOut",
+                }}
+                whileHover={{ x: 6 }}
+                className="group rounded-2xl border border-white/8 bg-[#101018] p-6 transition hover:border-violet-400/30 hover:bg-violet-500/4"
+                >
                 <div className="flex items-start gap-5">
                   <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl border border-violet-400/20 bg-violet-500/10 text-violet-300">
                     <Icon size={22} />
@@ -82,7 +92,7 @@ function AboutSection() {
                     </p>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

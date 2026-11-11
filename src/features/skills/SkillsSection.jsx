@@ -7,6 +7,7 @@ import {
   Database,
   Wrench,
 } from "lucide-react";
+import { motion } from "framer-motion";
 
 import SectionLabel from "../../components/common/SectionLabel";
 
@@ -45,7 +46,7 @@ const skillGroups = [
     title: "Development Tools",
     icon: Wrench,
     description: "Tools used throughout development and testing.",
-    skills: ["VS Code", "Postman", "GitHub", "k6"],
+    skills: ["VS Code", "Android Studio", "Visual Studio", "Postman", "GitHub", "k6"],
   },
 ];
 
@@ -71,10 +72,18 @@ function SkillsSection() {
 
       <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {skillGroups.map(({ title, icon: Icon, description, skills }) => (
-          <div
-            key={title}
-            className="group rounded-2xl border border-white/[0.08] bg-[#101018] p-6 transition duration-300 hover:-translate-y-1 hover:border-violet-400/30"
-          >
+          <motion.div
+                key={title}
+                initial={{ opacity: 0, y: 35 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.2 }}
+                transition={{
+                    duration: 0.6,
+                    delay: 0.1,
+                }}
+                whileHover={{ y: -7, scale: 1.01 }}
+                className="group rounded-2xl border border-white/8 bg-[#101018] p-6 transition hover:border-violet-400/30"
+                >
             <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-violet-400/20 bg-violet-500/10 text-violet-300">
               <Icon size={23} />
             </div>
@@ -91,13 +100,13 @@ function SkillsSection() {
               {skills.map((skill) => (
                 <span
                   key={skill}
-                  className="rounded-lg border border-white/[0.08] bg-white/[0.03] px-3 py-2 text-xs text-zinc-300"
+                  className="rounded-lg border border-white/8 bg-white/3 px-3 py-2 text-xs text-zinc-300"
                 >
                   {skill}
                 </span>
               ))}
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

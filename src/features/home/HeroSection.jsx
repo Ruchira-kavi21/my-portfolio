@@ -22,7 +22,7 @@ function HeroSection() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.7 }}
       >
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-violet-400/20 bg-violet-500/[0.08] px-4 py-2 text-xs text-violet-200">
+        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-violet-400/20 bg-violet-500/8 px-4 py-2 text-xs text-violet-200">
           <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
           SOFTWARE ENGINEERING · SRI LANKA
         </div>
@@ -31,7 +31,7 @@ function HeroSection() {
 
         <h1 className="max-w-3xl text-5xl font-bold leading-[1.08] tracking-tight sm:text-6xl lg:text-7xl">
           Ruchira
-          <span className="mt-2 block bg-gradient-to-r from-violet-300 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
+          <span className="mt-2 block bg-linear-to-r from-violet-300 via-purple-400 to-indigo-400 bg-clip-text text-transparent">
             Kaveesha.
           </span>
         </h1>
@@ -60,7 +60,7 @@ function HeroSection() {
 
           <a
             href="#contact"
-            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/[0.03] px-6 py-3.5 text-sm font-medium text-zinc-200 transition hover:border-white/25 hover:bg-white/[0.07]"
+            className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/3 px-6 py-3.5 text-sm font-medium text-zinc-200 transition hover:border-white/25 hover:bg-white/[0.07]"
           >
             <Mail size={16} /> Get in touch
           </a>
@@ -102,10 +102,10 @@ function HeroSection() {
         transition={{ duration: 0.8, delay: 0.15 }}
         className="relative mx-auto w-full max-w-md"
       >
-        <div className="absolute -inset-5 rounded-[2rem] bg-gradient-to-br from-violet-600/20 via-transparent to-indigo-600/20 blur-2xl" />
+        <div className="absolute -inset-5 rounded-4xl bg-linear-to-br from-violet-600/20 via-transparent to-indigo-600/20 blur-2xl" />
 
         <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-[#101018]/95 p-6 shadow-2xl shadow-black/40 sm:p-8">
-          <div className="flex items-center justify-between border-b border-white/[0.08] pb-5">
+          <div className="flex items-center justify-between border-b border-white/8 pb-5">
             <div className="flex gap-2">
               <span className="h-2.5 w-2.5 rounded-full bg-red-400/80" />
               <span className="h-2.5 w-2.5 rounded-full bg-yellow-400/80" />
@@ -147,13 +147,13 @@ function HeroSection() {
             </p>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 border-t border-white/[0.08] pt-5">
+          <div className="grid grid-cols-3 gap-3 border-t border-white/8 pt-5">
             {[
               ["01", "Curiosity"],
               ["02", "Creativity"],
               ["03", "Consistency"],
             ].map(([number, label]) => (
-              <div key={label} className="rounded-xl bg-white/[0.03] p-3">
+              <div key={label} className="rounded-xl bg-white/3 p-3">
                 <p className="font-mono text-xs text-violet-300">{number}</p>
                 <p className="mt-1 text-xs text-zinc-400">{label}</p>
               </div>
