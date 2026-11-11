@@ -10,7 +10,7 @@ function Footer() {
         </a>
 
         <p>
-          © {new Date().getFullYear()} Ruchira Kaveesha. Built with React.
+          © {new Date().getFullYear()} Ruchira Kaveesha. 
         </p>
 
         <a
