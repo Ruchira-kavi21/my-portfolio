@@ -4,8 +4,8 @@ import { motion, useReducedMotion } from "framer-motion";
 function Reveal({
   children,
   delay = 0,
-  duration = 1.4,
-  y = 50,
+  duration = 0.7,
+  y = 35,
   className = "",
 }) {
   const shouldReduceMotion = useReducedMotion();
@@ -18,10 +18,7 @@ function Reveal({
           : { opacity: 0, y }
       }
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{
-        once: false,
-        amount: 0.15,
-      }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{
         duration: shouldReduceMotion ? 0 : duration,
         delay: shouldReduceMotion ? 0 : delay,
