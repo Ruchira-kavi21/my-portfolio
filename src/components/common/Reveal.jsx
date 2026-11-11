@@ -5,7 +5,7 @@ function Reveal({
   children,
   delay = 0.5,
   duration = 0.7,
-  y = 50git ,
+  y = 50 ,
   className = "",
 }) {
   const shouldReduceMotion = useReducedMotion();
