@@ -3,7 +3,7 @@ import { motion, useReducedMotion } from "framer-motion";
 
 function Reveal({
   children,
-  delay = 0.5,
+  delay = 0,
   duration = 1.4,
   y = 50,
   className = "",
