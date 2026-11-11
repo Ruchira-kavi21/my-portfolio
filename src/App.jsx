@@ -7,6 +7,7 @@ import HeroSection from "./features/home/HeroSection";
 import AboutSection from "./features/about/AboutSection";
 import SkillsSection from "./features/skills/SkillsSection";
 import ProjectsSection from "./components/projects/ProjectsSection";
+import ContactSection from "./features/contact/ContactSection";
 
 function App() {
   return (
@@ -35,6 +36,10 @@ function App() {
           
           <Reveal>
             <ProjectsSection />
+          </Reveal>
+
+          <Reveal>
+            <ContactSection />
           </Reveal>
         </main>
 
