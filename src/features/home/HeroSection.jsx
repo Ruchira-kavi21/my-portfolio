@@ -6,6 +6,7 @@ import {
   ArrowDownRight,
   Mail,
   Sparkles,
+  Download,
 } from "lucide-react";
 
 import { FaGithub, FaLinkedinIn } from "react-icons/fa6";
@@ -63,6 +64,14 @@ function HeroSection() {
             className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/3 px-6 py-3.5 text-sm font-medium text-zinc-200 transition hover:border-white/25 hover:bg-white/[0.07]"
           >
             <Mail size={16} /> Get in touch
+          </a>
+          <a
+            href="/Ruchira-Kaveesha-CV.pdf"
+            download="Ruchira-Kaveesha-CV.pdf"
+            className="inline-flex items-center justify-center gap-2 rounded-xl border border-purple-500/40 bg-purple-500/10 px-6 py-3 font-medium text-purple-300 transition hover:border-purple-400 hover:bg-purple-500/20"
+          >
+            Download CV
+            <Download size={18} />
           </a>
         </div>
 
